@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>My Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: inherit;
+        }
+        nav {
+            width: 250px;
+            height: 100%;
+            padding: 1em;
+            position: absolute;
+            float: left;
+            left: -300px;
+            background-color: #50A58E;
+        }
+        nav .list {
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            
+        }
+        nav .list-item {
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: black;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            font-size: 1.5em;
+            padding: 1em;
+            
+        }
+        #exit-btn {
+            font-size: 1.5em;
+        }
+        container {
+            flex: 1;
+            flex-direction: column;
+        }
+        heading {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: #140F2F;
+            color: #ffffff;
+            padding: 1em;
+        }
+        heading a {
+            font-size: 2em;
+            color: inherit;
+            margin-right: 1em;
+        }
+        section {
+            display: flex;
+
+            justify-content: center;
+            background-color: #000;
+        }
+        section .cover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        section img {
+            
+            height: 250px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="list">
+            <div class="list-item">
+                <a href="#">
+                    <span id="exit-btn" class="fas fa-times"></span>
+                </a>
+            </div>
+            <div class="list-item">Home</div>
+            <div class="list-item">About</div>
+            <div class="list-item">Contact</div>
+            <div class="list-item">Media</div>
+        </div>
+    </nav>
+    <div class="container">
+        <heading>
+            <a href="#">
+                <span id="menu-btn" class="fa fa-bars" aria-hidden="true"></span>
+            </a>
+            <h1>tb12</h1>
+        </heading>
+        
+        <section>
+            <div class="cover"></div>
+            <img src="https://www.techworm.net/wp-content/uploads/2017/12/shutterstock_cyber_spy_hacker.jpg" />
+        </section>
+    </div>
+    <script>
+        const speed = 100;
+        $('#menu-btn').on('click', () => {
+            $('nav').animate({
+                left: 0
+            }, speed)
+        });
+        $('#exit-btn').on('click', () => {
+            $('nav').animate({
+                left: -300
+            }, speed)
+        });
+    </script>
+</body>
+</html>
